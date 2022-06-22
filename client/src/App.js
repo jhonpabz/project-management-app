@@ -1,11 +1,19 @@
 import Header from "./components/Header";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "http://localhost:5000/graphql",
+  cache: new InMemoryCache(),
+});
 
 const App = () => {
   return (
-    <div className="container">
-      <Header />
-      <h1>Hello</h1>
-    </div>
+    <>
+      <ApolloProvider client={client}>
+        <Header />
+        <h1>Hello</h1>
+      </ApolloProvider>
+    </>
   );
 };
 
