@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const TableComponent = ({ clients }) => {
   return (
@@ -16,6 +17,7 @@ const TableComponent = ({ clients }) => {
             <TableCell>Name</TableCell>
             <TableCell>Email</TableCell>
             <TableCell>Phone</TableCell>
+            <TableCell>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -29,6 +31,9 @@ const TableComponent = ({ clients }) => {
               </TableCell>
               <TableCell>{client.email}</TableCell>
               <TableCell>{client.phone}</TableCell>
+              <TableCell>
+                <DeleteIcon />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
