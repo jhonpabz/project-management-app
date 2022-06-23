@@ -1,5 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+import TableComponent from "./Table";
+import { Container } from "@mui/material";
 
 const GET_CLIENTS = gql`
   query getClients {
@@ -14,10 +16,18 @@ const GET_CLIENTS = gql`
 
 const Clients = () => {
   const { loading, error, data } = useQuery(GET_CLIENTS);
-
+  console.log(data.clients);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
-  return <>{!loading && !error && <h1> Clients</h1>}</>;
+  return (
+    <>
+      {!loading && !error && (
+        <Container>
+          <TableComponent clients={data.clients} />
+        </Container>
+      )}
+    </>
+  );
 };
 
 export default Clients;
