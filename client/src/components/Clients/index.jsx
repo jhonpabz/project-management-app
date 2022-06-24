@@ -20,7 +20,7 @@ const Clients = () => {
   return (
     <>
       {!loading && !error && (
-        <Container>
+        <>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
@@ -38,7 +38,7 @@ const Clients = () => {
               </TableBody>
             </Table>
           </TableContainer>
-        </Container>
+        </>
       )}
     </>
   );
