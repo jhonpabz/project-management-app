@@ -4,8 +4,8 @@ import Clients from "./components/Clients";
 import AddModalClient from "./components/AddModalClient";
 import { Container } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
-toast.configure();
+import { ToastContainer } from "react-toastify";
+import Projects from "./components/Projects";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -39,6 +39,7 @@ const App = () => {
         <ToastContainer />
         <Container>
           <AddModalClient />
+          <Projects />
           <Clients />
         </Container>
       </ApolloProvider>
