@@ -6,12 +6,14 @@ import IconButton from "@mui/material/IconButton";
 import { useMutation } from "@apollo/client";
 import { DELETE_CLIENT } from "../../mutations/clientMutations";
 import { GET_CLIENTS } from "../../services/clientQueries";
+import { toast } from "react-toastify";
 
 const ClientRowComponent = ({ client }) => {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
     variables: { id: client.id },
     // refetchQueries: [{ query: GET_CLIENTS }],
     update(cache, { data: { deleteClient } }) {
+      toast.success("Client has been deleted");
       const { clients } = cache.readQuery({ query: GET_CLIENTS });
       cache.writeQuery({
         query: GET_CLIENTS,

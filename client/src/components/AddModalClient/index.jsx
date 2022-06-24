@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import { ADD_CLIENT } from "../../mutations/clientMutations";
 import { GET_CLIENTS } from "../../services/clientQueries";
+import { toast } from "react-toastify";
 
 const style = {
   position: "absolute",
@@ -53,6 +54,7 @@ const AddModalClient = () => {
     setEmail("");
     setPhone("");
     setOpen(false);
+    toast.success("Added Client Successfully");
   };
   return (
     <>
