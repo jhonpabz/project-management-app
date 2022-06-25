@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import Clients from "./components/Clients";
-import AddModalClient from "./components/AddModalClient";
 import { Container } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import Projects from "./components/Projects";
+
+import Home from "./pages/Home";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -40,9 +39,9 @@ const App = () => {
           <Header />
           <ToastContainer />
           <Container>
-            <AddModalClient />
-            <Projects />
-            <Clients />
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
           </Container>
         </Router>
       </ApolloProvider>
