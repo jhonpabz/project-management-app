@@ -6,23 +6,35 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 
 const ProjectCard = ({ project }) => {
   return (
     <Box sx={{ m: 1 }}>
-      <Grid item xs={4}>
-        <Card sx={{ minWidth: 275 }}>
+      <Card sx={{}}>
+        <Box sx={{ minWidth: 300 }}>
           <CardContent>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
+            <Typography variant="h5" component="div">
               {project.name}
             </Typography>
+            <Box sx={{ display: "flex" }}>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Status:
+              </Typography>
+              <Typography variant="body2">{project.status}</Typography>
+            </Box>
           </CardContent>
-        </Card>
-      </Grid>
+          <CardActions>
+            <Link href={`/projects/${project.id}`} underline="none">
+              <Button size="small">View</Button>
+            </Link>
+          </CardActions>
+        </Box>
+      </Card>
     </Box>
   );
 };

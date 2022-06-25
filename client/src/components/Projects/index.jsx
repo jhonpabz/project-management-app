@@ -22,7 +22,9 @@ const Projects = () => {
               columns={{ xs: 4, sm: 8, md: 12 }}
             >
               {data.projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <Grid item xs={12} md={6} lg={4}>
+                  <ProjectCard key={project.id} project={project} />
+                </Grid>
               ))}
             </Grid>
           </Box>
