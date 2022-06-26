@@ -58,7 +58,11 @@ const AddModalClient = () => {
   };
   return (
     <>
-      <Button onClick={handleOpen}>Add Client</Button>
+      <Box sx={{ m: 1, mt: 2 }}>
+        <Button onClick={handleOpen} variant="contained">
+          Add Client
+        </Button>
+      </Box>
       <Modal
         open={open}
         onClose={handleClose}
