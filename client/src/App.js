@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Project from "./pages/Project";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -42,6 +43,7 @@ const App = () => {
           <Container>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/projects/:id" element={<Project />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Container>
