@@ -52,6 +52,7 @@ const AddProjectModal = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name === "" || description === "" || status === "") {

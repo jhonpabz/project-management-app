@@ -3,11 +3,14 @@ import AddModalClient from "../../components/AddModalClient";
 import AddProjectModal from "../../components/AddProjectModal";
 import Clients from "../../components/Clients";
 import Projects from "../../components/Projects";
+import { Box } from "@mui/material";
 const Home = () => {
   return (
     <>
-      <AddModalClient />
-      <AddProjectModal />
+      <Box sx={{ display: "flex" }}>
+        <AddModalClient />
+        <AddProjectModal />
+      </Box>
       <Projects />
       <Clients />
     </>
