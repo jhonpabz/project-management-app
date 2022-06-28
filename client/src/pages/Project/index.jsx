@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import ClientInfo from "../../components/ClientInfo";
+import DeleteProjectButton from "../../components/DeleteProjectButton";
 
 const Project = () => {
   const { id } = useParams();
@@ -39,6 +40,7 @@ const Project = () => {
           <Link href="/" underline="none">
             <Button size="small">Back</Button>
           </Link>
+          <DeleteProjectButton projectId={data.project.id} />
         </CardActions>
       </Card>
     </>
