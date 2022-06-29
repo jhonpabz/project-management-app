@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import ClientInfo from "../../components/ClientInfo";
 import DeleteProjectButton from "../../components/DeleteProjectButton";
+import { Box } from "@mui/material";
 
 const Project = () => {
   const { id } = useParams();
@@ -23,23 +24,27 @@ const Project = () => {
   return (
     <>
       <Card sx={{ mt: 5 }}>
-        <CardContent>
-          <Typography variant="h4" gutterBottom component="div">
-            {data.project.name}
-          </Typography>
-          <Typography variant="overline" display="block" component="div">
-            {data.project.description}
-          </Typography>
-          <Typography display="block" component="div" gutterBottom>
-            Status: {data.project.status}
-          </Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <CardContent>
+            <Typography variant="h4" gutterBottom component="div">
+              {data.project.name}
+            </Typography>
+            <Typography variant="overline" display="block" component="div">
+              {data.project.description}
+            </Typography>
+            <Typography display="block" component="div" gutterBottom>
+              Status: {data.project.status}
+            </Typography>
 
-          <ClientInfo client={data.project.client} />
-        </CardContent>
+            <ClientInfo client={data.project.client} />
+          </CardContent>
+          <Box sx={{ m: 2 }}>
+            <Link href="/" underline="none">
+              <Button size="small">Back</Button>
+            </Link>
+          </Box>
+        </Box>
         <CardActions>
-          <Link href="/" underline="none">
-            <Button size="small">Back</Button>
-          </Link>
           <DeleteProjectButton projectId={data.project.id} />
         </CardActions>
       </Card>

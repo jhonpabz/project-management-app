@@ -20,6 +20,7 @@ const DeleteProjectButton = ({ projectId }) => {
         color="error"
         startIcon={<DeleteIcon />}
         onClick={deleteProject}
+        size="small"
       >
         Delete Project
       </Button>
