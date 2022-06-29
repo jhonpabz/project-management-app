@@ -12,6 +12,7 @@ import Link from "@mui/material/Link";
 import ClientInfo from "../../components/ClientInfo";
 import DeleteProjectButton from "../../components/DeleteProjectButton";
 import { Box } from "@mui/material";
+import EditProjectForm from "../../components/EditProjectForm";
 
 const Project = () => {
   const { id } = useParams();
@@ -44,6 +45,7 @@ const Project = () => {
             </Link>
           </Box>
         </Box>
+        <EditProjectForm project={data.project} />
         <CardActions>
           <DeleteProjectButton projectId={data.project.id} />
         </CardActions>
