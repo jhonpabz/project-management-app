@@ -9,7 +9,6 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { Collapse, IconButton } from "@mui/material";
 
@@ -36,12 +35,10 @@ const EditProjectForm = ({ project }) => {
 
   return (
     <>
-      <Box sx={{ m: 2 }}>
-        <IconButton onClick={() => setExpand(!expand)}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Update Project
-          </Typography>
-        </IconButton>
+      <Box sx={{ minWidth: "300px", width: "100%", m: 1 }}>
+        <Button size="small" onClick={() => setExpand(!expand)}>
+          Update Project
+        </Button>
         <Collapse in={expand}>
           <form onSubmit={handleSubmit}>
             <TextField

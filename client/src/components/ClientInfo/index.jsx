@@ -14,49 +14,50 @@ import PhoneIcon from "@mui/icons-material/Phone";
 const ClientInfo = ({ client }) => {
   return (
     <>
-      <Box sx={{ mt: 5 }}>
+      <Box sx={{ m: 1 }}>
         <Typography variant="h5" gutterBottom component="div">
           Client Information:
         </Typography>
+
+        <List
+          sx={{ minWidth: "350px", width: "100%", bgcolor: "background.paper" }}
+          aria-label="contacts"
+        >
+          <Divider light />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>{client.name}</Typography>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+          <Divider light />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <EmailIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>{client.email}</Typography>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+          <Divider light />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <PhoneIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>{client.phone}</Typography>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Box>
-      <List
-        sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-        aria-label="contacts"
-      >
-        <Divider light />
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <AccountCircleIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Typography>{client.name}</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <Divider light />
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <EmailIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Typography>{client.email}</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <Divider light />
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <PhoneIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Typography>{client.phone}</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-      </List>
     </>
   );
 };

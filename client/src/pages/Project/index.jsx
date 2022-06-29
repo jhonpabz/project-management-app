@@ -13,6 +13,7 @@ import ClientInfo from "../../components/ClientInfo";
 import DeleteProjectButton from "../../components/DeleteProjectButton";
 import { Box } from "@mui/material";
 import EditProjectForm from "../../components/EditProjectForm";
+import Grid from "@mui/material/Grid";
 
 const Project = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const Project = () => {
   return (
     <>
       <Card sx={{ mt: 5 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <CardContent>
             <Typography variant="h4" gutterBottom component="div">
               {data.project.name}
@@ -36,8 +37,6 @@ const Project = () => {
             <Typography display="block" component="div" gutterBottom>
               Status: {data.project.status}
             </Typography>
-
-            <ClientInfo client={data.project.client} />
           </CardContent>
           <Box sx={{ m: 2 }}>
             <Link href="/" underline="none">
@@ -45,7 +44,16 @@ const Project = () => {
             </Link>
           </Box>
         </Box>
-        <EditProjectForm project={data.project} />
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <ClientInfo client={data.project.client} />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <EditProjectForm project={data.project} />
+            </Grid>
+          </Grid>
+        </Box>
         <CardActions>
           <DeleteProjectButton projectId={data.project.id} />
         </CardActions>
