@@ -10,7 +10,7 @@ import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { Collapse, IconButton } from "@mui/material";
+import { Collapse } from "@mui/material";
 
 const EditProjectForm = ({ project }) => {
   const [name, setName] = useState(project.name);
