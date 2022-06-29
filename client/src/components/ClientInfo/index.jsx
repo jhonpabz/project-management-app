@@ -14,7 +14,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 const ClientInfo = ({ client }) => {
   return (
     <>
-      <Box sx={{ m: 1 }}>
+      <Box sx={{}}>
         <Typography variant="h5" gutterBottom component="div">
           Client Information:
         </Typography>

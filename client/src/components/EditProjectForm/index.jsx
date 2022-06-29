@@ -35,7 +35,7 @@ const EditProjectForm = ({ project }) => {
 
   return (
     <>
-      <Box sx={{ minWidth: "300px", width: "100%", m: 1 }}>
+      <Box sx={{ minWidth: "300px", width: "100%", mr: 2 }}>
         <Button size="small" onClick={() => setExpand(!expand)}>
           Update Project
         </Button>
@@ -82,7 +82,7 @@ const EditProjectForm = ({ project }) => {
             </FormControl>
 
             <Box sx={{ mt: 2 }}>
-              <Button type="Submit" variant="contained">
+              <Button type="Submit" variant="contained" fullWidth>
                 Submit
               </Button>
             </Box>

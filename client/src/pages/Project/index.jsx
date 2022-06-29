@@ -26,7 +26,7 @@ const Project = () => {
   return (
     <>
       <Card sx={{ mt: 5 }}>
-        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <CardContent>
             <Typography variant="h4" gutterBottom component="div">
               {data.project.name}
@@ -34,9 +34,14 @@ const Project = () => {
             <Typography variant="overline" display="block" component="div">
               {data.project.description}
             </Typography>
-            <Typography display="block" component="div" gutterBottom>
-              Status: {data.project.status}
-            </Typography>
+            <Box sx={{ display: "flex" }}>
+              <Typography color="text.secondary" gutterBottom>
+                Status:
+              </Typography>
+              <Typography display="block" component="div" gutterBottom>
+                {data.project.status}
+              </Typography>
+            </Box>
           </CardContent>
           <Box sx={{ m: 2 }}>
             <Link href="/" underline="none">
@@ -44,8 +49,8 @@ const Project = () => {
             </Link>
           </Box>
         </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
+        <Box sx={{ m: 2 }}>
+          <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <ClientInfo client={data.project.client} />
             </Grid>
@@ -54,7 +59,7 @@ const Project = () => {
             </Grid>
           </Grid>
         </Box>
-        <CardActions>
+        <CardActions sx={{ justifyContent: "flex-end" }}>
           <DeleteProjectButton projectId={data.project.id} />
         </CardActions>
       </Card>
